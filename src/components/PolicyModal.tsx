@@ -17,7 +17,7 @@ export default function PolicyModal({ isOpen, onClose }: PolicyModalProps) {
         <div className="flex items-center justify-between p-4 border-b border-gold-950/40 bg-gradient-to-r from-gold-950/20 via-transparent to-transparent">
           <div className="flex items-center gap-2">
             <Scroll className="w-5 h-5 text-gold-500" />
-            <h2 className="font-serif text-lg text-white font-medium tracking-wide">
+            <h2 className="font-serif text-lg text-white font-semibold tracking-wide">
               Our Studio Policies
             </h2>
           </div>
@@ -34,17 +34,17 @@ export default function PolicyModal({ isOpen, onClose }: PolicyModalProps) {
         <div className="p-5 max-h-[400px] overflow-y-auto space-y-4">
           <div className="flex items-center gap-2 bg-gold-950/15 border border-gold-950/40 p-3 rounded-xl mb-2">
             <ShieldCheck className="w-5 h-5 text-gold-500 shrink-0" />
-            <p className="text-[11px] text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-300 font-light leading-relaxed">
               We operate under couture service standards to ensure maximum safety, reliability, and precision for all high-end events.
             </p>
           </div>
 
           {POLICIES.map((policy, idx) => (
             <div key={idx} className="bg-[#111111] border border-gold-950/40 p-4 rounded-xl space-y-1.5">
-              <h3 className="font-serif text-sm text-gold-400 font-medium tracking-wide">
+              <h3 className="font-serif text-sm text-gold-400 font-semibold tracking-wide">
                 {policy.title}
               </h3>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 font-light leading-relaxed">
                 {policy.content}
               </p>
             </div>

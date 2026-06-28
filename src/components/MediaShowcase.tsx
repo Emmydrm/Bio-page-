@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CAROUSEL_IMAGES } from "../data";
 
 export default function MediaShowcase() {
@@ -26,7 +26,7 @@ export default function MediaShowcase() {
 
   return (
     <section className="px-4 py-6" id="media-showcase-section">
-      <div className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/50 bg-[#0A0A0A] aspect-[16/10] sm:aspect-[16/9] shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] transition-all duration-500">
+      <div className="relative overflow-hidden rounded-xl border border-[#D4AF37]/50 bg-[#0A0A0A] aspect-square shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] transition-all duration-500">
         {/* Slides Container */}
         <div className="relative w-full h-full">
           {CAROUSEL_IMAGES.map((image, index) => {
@@ -40,8 +40,8 @@ export default function MediaShowcase() {
                     : "opacity-0 scale-105 pointer-events-none z-0"
                 }`}
               >
-                {/* Background Dim Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 z-10" />
+                {/* Background Dim Overlay - very subtle to maintain rich image feel but protect icons */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 z-10" />
 
                 {/* Main Event Image */}
                 <img
@@ -50,19 +50,6 @@ export default function MediaShowcase() {
                   className="w-full h-full object-cover select-none"
                   referrerPolicy="no-referrer"
                 />
-
-                {/* Captions Overlay with gold border */}
-                <div className="absolute bottom-4 left-4 right-4 z-20 bg-black/75 backdrop-blur-md p-3.5 rounded-xl border border-gold-950/60 flex flex-col items-start gap-1">
-                  <div className="flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-gold-500 animate-pulse" />
-                    <span className="font-mono text-[10px] text-gold-500 uppercase tracking-widest font-semibold">
-                      {image.category}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-sm sm:text-base text-white tracking-wide font-medium">
-                    {image.title}
-                  </h3>
-                </div>
               </div>
             );
           })}

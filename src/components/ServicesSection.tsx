@@ -60,8 +60,8 @@ export default function ServicesSection() {
     <section className="px-6 py-8 bg-transparent animate-fade-in" id="services-section">
       {/* Title Header */}
       <div className="text-center mb-8">
-        <span className="font-mono text-[10px] text-gold-500 uppercase tracking-widest font-bold">OUR SERVICES</span>
-        <h2 className="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide mt-1">
+        <span className="font-mono text-[10px] text-gold-500 uppercase tracking-widest font-semibold">OUR SERVICES</span>
+        <h2 className="font-serif text-lg text-white font-semibold tracking-wide mt-1">
           Event Planning & Management Services
         </h2>
         <div className="w-12 h-[1px] bg-gold-500/50 mx-auto mt-3.5" />
@@ -99,7 +99,7 @@ export default function ServicesSection() {
 
                 <ul className="space-y-2.5 pl-1 z-10 relative">
                   {card.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className="flex items-center gap-2 text-xs text-gray-700 font-medium font-sans">
+                    <li key={itemIdx} className="flex items-center gap-2 text-sm text-gray-700 font-normal font-sans">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
                       <span>{item}</span>
                     </li>

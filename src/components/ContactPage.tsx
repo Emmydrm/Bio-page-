@@ -41,10 +41,10 @@ export default function ContactPage({ onBack, onSocialClick }: ContactPageProps)
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-gold-500/30 bg-gold-500/5 text-[#D4AF37] mb-3 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
           <Phone className="w-5 h-5" />
         </div>
-        <h2 className="font-serif text-xl sm:text-2xl text-white font-medium tracking-wide">
+        <h2 className="font-serif text-lg text-white font-semibold tracking-wide">
           Contact Our Studio
         </h2>
-        <p className="text-xs text-gray-400 mt-2 max-w-sm mx-auto leading-relaxed">
+        <p className="text-sm font-normal text-gray-300 mt-2 max-w-sm mx-auto leading-relaxed">
           Connect with Peter Emmanuel and our world-class event planners.
         </p>
         <div className="w-12 h-[1px] bg-gold-500/30 mx-auto mt-4" />

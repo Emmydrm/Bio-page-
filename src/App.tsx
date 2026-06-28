@@ -10,11 +10,10 @@ import {
   Phone, 
   ClipboardSignature, 
   Briefcase,
-  Share2,
   ArrowLeft,
   CheckCircle2,
   Instagram,
-  Video
+  Music
 } from "lucide-react";
 import Header from "./components/Header";
 import MediaShowcase from "./components/MediaShowcase";
@@ -146,7 +145,7 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent text-gray-300 selection:bg-gold-500/20 selection:text-gold-400 flex flex-col items-center justify-start py-4 sm:py-12 px-2 sm:px-4 font-sans relative">
+    <div className="min-h-screen bg-transparent text-gray-300 selection:bg-gold-500/20 selection:text-gold-400 flex flex-col items-center justify-center py-0 sm:py-6 px-0 sm:px-4 font-sans relative">
       
       {/* Absolute Ambient Lighting Effects (Soft & Subtle) */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
@@ -154,26 +153,22 @@ export default function App() {
       {/* Main Responsive Layout Wrapper (Simulating premium smartphone link-in-bio look with full responsive fidelity) */}
       <div 
         ref={containerRef}
-        className="w-full max-w-[420px] mx-auto mt-2 bg-[#0A0A0A] border border-[#D4AF37]/20 rounded-3xl overflow-hidden relative flex flex-col h-[88vh] shadow-[0_0_50px_rgba(212,175,55,0.05)]"
+        className="w-full max-w-[460px] mx-auto bg-black sm:border border-none sm:border-[#D4AF37]/25 sm:rounded-3xl overflow-hidden relative flex flex-col min-h-screen sm:h-[90vh] sm:max-h-[880px] shadow-[0_0_50px_rgba(212,175,55,0.12)]"
       >
         
-        {/* Top Minimalist Control Bar (Fixed) */}
-        <div className="px-6 py-3 bg-black/80 border-b border-gold-950/20 flex items-center justify-between text-[10px] text-gray-500 font-mono tracking-wider shrink-0 select-none z-30">
-          <div className="flex items-center gap-1.5">
-            <Sparkles className="w-3 h-3 text-gold-500 animate-pulse" />
-            <span className="text-gold-500 font-semibold uppercase tracking-widest text-[9px]">AeX COUTURE</span>
-          </div>
-          <button
-            onClick={handleShareApp}
-            className="hover:text-gold-400 transition-colors cursor-pointer flex items-center gap-1 bg-transparent border-none text-[9px] uppercase tracking-wider font-mono font-bold"
-            id="top-share-btn"
-          >
-            <Share2 className="w-3 h-3 text-gold-500" /> Share
-          </button>
+        {/* Full Page Luxury Cinematic Event Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img 
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=1200" 
+            alt="Luxury Event Atmosphere" 
+            className="w-full h-full object-cover filter blur-[4px] opacity-35 scale-105"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/85 to-black/95 z-10" />
         </div>
 
         {/* MAIN VIEWPORT (Scrollable) */}
-        <main className="flex-1 overflow-y-auto no-scrollbar pb-6 relative bg-[#0B0B0B]">
+        <main className="flex-1 overflow-y-auto no-scrollbar pb-6 relative z-10 bg-transparent">
           
           {currentPage === "home" && (
             <div className="animate-fade-in">
@@ -184,10 +179,10 @@ export default function App() {
               <MediaShowcase />
 
               {/* SECTION 3 - MAIN ACTION BUTTONS */}
-              <div className="px-6 py-6 flex flex-col gap-3.5" id="navigation-core-stack">
+              <div className="px-4 sm:px-6 py-6 flex flex-col gap-4" id="navigation-core-stack">
                 <div className="flex items-center gap-3 mb-1">
                   <div className="h-[1px] bg-gold-950/20 flex-1" />
-                  <span className="font-mono text-[9px] text-gold-500/80 tracking-widest uppercase font-bold">Studio Desk</span>
+                  <span className="font-serif text-base text-[#D4AF37] tracking-[0.15em] uppercase font-semibold">Studio Desk</span>
                   <div className="h-[1px] bg-gold-950/20 flex-1" />
                 </div>
 
@@ -197,16 +192,16 @@ export default function App() {
                     <button
                       key={btn.id}
                       onClick={btn.action}
-                      className="w-full rounded-xl border border-[#D4AF37]/30 bg-black hover:bg-gold-500/10 hover:border-[#D4AF37]/80 text-white font-serif text-sm font-medium tracking-wide py-3.5 px-5 flex items-center justify-between transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-sm hover:shadow-[0_0_12px_rgba(212,175,55,0.15)] group"
+                      className="w-full rounded-xl border border-[#D4AF37]/25 bg-black/55 backdrop-blur-md hover:bg-gold-500/15 hover:border-[#D4AF37]/80 text-white py-4 px-6 flex items-center justify-between transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:shadow-[0_0_18px_rgba(212,175,55,0.25)] group"
                       id={`nav-stack-btn-${btn.id}`}
                     >
-                      <div className="flex items-center gap-3.5">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-gold-950/60 text-[#D4AF37] bg-gold-950/10 group-hover:bg-[#D4AF37]/10 transition-colors">
-                          <IconComp className="w-4 h-4" />
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center justify-center w-10 h-10 rounded-xl border border-gold-950/60 text-[#D4AF37] bg-gold-950/10 group-hover:bg-[#D4AF37]/10 transition-colors shrink-0">
+                          <IconComp className="w-5 h-5" />
                         </div>
-                        <span className="text-gray-200 group-hover:text-white transition-colors text-left">{btn.label}</span>
+                        <span className="text-gray-200 group-hover:text-white transition-colors text-left font-medium text-base tracking-wide">{btn.label}</span>
                       </div>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-[#D4AF37]/60 group-hover:text-[#D4AF37] transition-colors" />
+                      <ArrowUpRight className="w-4 h-4 text-[#D4AF37]/60 group-hover:text-[#D4AF37] transition-colors shrink-0" />
                     </button>
                   );
                 })}
@@ -264,7 +259,7 @@ export default function App() {
           {/* FOOTER */}
           <footer 
             id="contact-footer" 
-            className="px-6 py-6 border-t border-gold-950/20 bg-black text-center space-y-4"
+            className="px-6 py-6 border-t border-gold-950/20 bg-black/60 backdrop-blur-md text-center space-y-4"
           >
             <div className="flex flex-col items-center gap-1">
               <div className="font-serif text-sm text-white tracking-wide font-medium">
@@ -276,10 +271,10 @@ export default function App() {
             </div>
 
             {/* Social Icons inside Footer */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-5">
               {[
                 { id: "insta", icon: Instagram, href: "https://instagram.com" },
-                { id: "tiktok", icon: Video, href: "https://tiktok.com" },
+                { id: "tiktok", icon: Music, href: "https://tiktok.com" },
                 { id: "whatsapp", icon: MessageCircle, href: "https://wa.me/2348000000000" }
               ].map((social, i) => {
                 const Icon = social.icon;
@@ -289,10 +284,10 @@ export default function App() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8.5 h-8.5 rounded-full border border-gold-950/50 hover:border-[#D4AF37] flex items-center justify-center text-gray-500 hover:text-[#D4AF37] transition-all duration-300 hover:scale-105"
+                    className="w-10 h-10 rounded-full border border-gold-950/50 hover:border-[#D4AF37] flex items-center justify-center text-gray-500 hover:text-[#D4AF37] bg-black transition-all duration-300 hover:scale-110 active:scale-95"
                     id={`footer-social-${social.id}`}
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-4.5 h-4.5" />
                   </a>
                 );
               })}
