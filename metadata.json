@@ -1,0 +1,6 @@
+{
+  "name": "ActiveXperience Events Link-in-Bio",
+  "description": "Sleek, high-end mobile-first Link-in-Bio portal for ActiveXperience Events planning and management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

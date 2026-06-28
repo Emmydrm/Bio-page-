@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  
+  --color-gold-50: #fefcf3;
+  --color-gold-100: #fbf6df;
+  --color-gold-200: #f5eaaf;
+  --color-gold-300: #eed574;
+  --color-gold-400: #e6bd41;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #b58d27;
+  --color-gold-700: #8e681e;
+  --color-gold-800: #6d4e19;
+  --color-gold-900: #503914;
+  --color-gold-950: #30210a;
+
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-card: var(--theme-card);
+  --color-theme-text-primary: var(--theme-text-primary);
+  --color-theme-text-secondary: var(--theme-text-secondary);
+  --color-theme-text-muted: var(--theme-text-muted);
+  --color-theme-border: var(--theme-border);
+  --color-theme-border-light: var(--theme-border-light);
+  --color-theme-nav-btn: var(--theme-nav-btn);
+  --color-theme-nav-icon: var(--theme-nav-icon);
+  --color-theme-header-ctrl: var(--theme-header-ctrl);
+  --color-theme-modal-bg: var(--theme-modal-bg);
+  --color-theme-input-bg: var(--theme-input-bg);
+}
+
+:root {
+  --theme-bg: transparent;
+  --theme-card: transparent;
+  --theme-text-primary: #FFFFFF;
+  --theme-text-secondary: #F3F4F6;
+  --theme-text-muted: #9CA3AF;
+  --theme-border: #D4AF37;
+  --theme-border-light: rgba(212, 175, 55, 0.3);
+  --theme-nav-btn: transparent;
+  --theme-nav-icon: transparent;
+  --theme-header-ctrl: transparent;
+  --theme-modal-bg: rgba(10, 10, 10, 0.95);
+  --theme-input-bg: rgba(15, 15, 15, 0.85);
+  --theme-glow: rgba(212, 175, 55, 0.15);
+  --theme-glow-hover: rgba(212, 175, 55, 0.25);
+  --theme-carousel-overlay: rgba(0, 0, 0, 0.75);
+}
+
+.theme-champagne {
+  --theme-bg: transparent;
+  --theme-card: transparent;
+  --theme-text-primary: #2C2213;
+  --theme-text-secondary: #4A3E2D;
+  --theme-text-muted: #837561;
+  --theme-border: #D4AF37;
+  --theme-border-light: rgba(212, 175, 55, 0.3);
+  --theme-nav-btn: transparent;
+  --theme-nav-icon: transparent;
+  --theme-header-ctrl: transparent;
+  --theme-modal-bg: rgba(255, 255, 255, 0.97);
+  --theme-input-bg: rgba(253, 252, 249, 0.9);
+  --theme-glow: rgba(181, 141, 39, 0.08);
+  --theme-glow-hover: rgba(181, 141, 39, 0.16);
+  --theme-carousel-overlay: rgba(255, 255, 255, 0.82);
+}
+
+@layer base {
+  html, body {
+    background-color: #0B0B0B !important;
+    background: #0B0B0B !important;
+    color: var(--theme-text-secondary);
+    font-family: var(--font-sans);
+  }
+}
+
+.theme-transition,
+.theme-transition * {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar for horizontal carousel and vertical scrolling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b58d27;
+}
+
+/* Custom glowing effects */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+.gold-glow-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  transform: translateY(-1px);
+}
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF 0%, #D4AF37 50%, #8E681E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #D4AF37, #503914) 1;
+}
+
